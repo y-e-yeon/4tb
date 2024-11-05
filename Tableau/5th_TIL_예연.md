@@ -102,12 +102,29 @@ FIXED 현재 뷰와 관계 없이 특정 차원을 사용해 계산하기 때문
 
 <!-- INCLUDE, EXCLUDE, FIXED 등 본 강의에서 알게 된 LOD 표현식에 대해 알게 된 점을 적고, 아래 두 질문에 답해보세요 :) -->
 
+##### INCLUDE LOD
+- 현재 뷰에서 특정 차원을 추가하여 계산
+- EXCLUDE LOD처럼 차원 필터를 통해 해당 값을 변경할 수 있음
+- ![41-1](../Tableau/png/5th/41-1.png)
+- ![41-2](../Tableau/png/5th/41-2.png)
+
+##### 데이터를 표시할 때 여러 LOD 표현식 방법을 통해 동일한 결과를 만들 수 있음
+- INCLUDE LOD 대신 FIXED LOD 사용 가능
+- ![41-3](../Tableau/png/5th/41-3.png)
+- ![41-4](../Tableau/png/5th/41-4.png)
 
 > **🧞‍♀️ 그렇다면 어떤 경우에 각 표현식을 사용하나요? 예시와 함께 적어보아요**
 
 
 ```
-여기에 답을 적어주세요!
+뷰에 표시되는 값이 차원인 경우 : FIXED LOD 표현식만 사용 가능 
+
+FIXED LOD는 차원과 측정값을 반환할 수 있지만,
+INCLUDE와 EXCLUDE LOD 표현식들은 측정값만 반환하기 때문
+
+반환 값이 차원 필터의 영향을 받게 되는 경우 : INCLUDE 또는 EXCLUDE LOD 표현식 사용
+
+FIXED LOD 표현식은 차원 필터에 영향을 받지 않지만, INCLUDE와 EXCLUDE LOD 표현식들은 차원 필터에 영향을 받기 때문
 ```
 
 ## 42. 매개변수
