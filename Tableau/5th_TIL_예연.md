@@ -150,7 +150,21 @@ FIXED LOD 표현식은 차원 필터에 영향을 받지 않지만, INCLUDE와 E
 ## 43. 매개변수 실습
 <!-- 영상 묶음에 포함되지 않아 찾기 어려우실까 링크를 아래에 첨부하겠습니다. 수강 후 삭제해주세요-->
 
-https://www.youtube.com/watch?v=GJvB8hBqeE8
+##### 계산식을 활용한 매개 변수 실습
+- ![43-1](../Tableau/png/5th/43-1.png)
+###### 매개변수를 작동시킬 계산된 필드 만들기
+- ![43-2](../Tableau/png/5th/43-2.png)
+###### 매개 변수에 따른 제목 변경이 되도록 설정
+- ![43-3](../Tableau/png/5th/43-3.png)
+- ![43-4](../Tableau/png/5th/43-4.png)
+###### 측정값으로 매개 변수 만들기
+- ![43-5](../Tableau/png/5th/43-5.png)
+- ![43-6](../Tableau/png/5th/43-6.png)
+- ![43-7](../Tableau/png/5th/43-7.png)
+- ![43-8](../Tableau/png/5th/43-8.png)
+###### 각각의 측정값 단위 표시
+- ![43-9](../Tableau/png/5th/43-9.png)
+- ![43-10](../Tableau/png/5th/43-10.png)
 
 ## 44. 매개변수 실습
 
