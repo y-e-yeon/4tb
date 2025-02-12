@@ -108,6 +108,7 @@ campaign.
 ```
 
 ## 익익 문제 1. CTR과 CPC 계산
+
 ```MD
 CTR (Click Through Rate)와 CPC (Cost Per Click)를 계산하는 문제입니다.
 **문제:** 각 광고(`ad_id`)에 대해 다음 값을 계산한 뒤 기존 데이터에 추가해서 보여주세요. 계산값이 안 나오면 ‘NULL’로 처리해주세요.
@@ -117,12 +118,16 @@ CTR (Click Through Rate)와 CPC (Cost Per Click)를 계산하는 문제입니다
 
 ```SQL
 SELECT
-
+  *,
+  (Clicks * 100 / NULLIF(Impressions, 0)) AS CTR,
+  (Spent / NULLIF(Clicks,0)) AS CPC
+FROM `inflearn-bigquery-437314.facebook_ad_conversion_data.facebook_ad_conversion_data`
 ```
 
 ![1번](../STUDY/image/1번.png)
 
 ## 익익 문제 2. 연령대별 평균 CTR 계산
+
 ```MD
 **문제:** 연령대(`age`)별 평균 CTR을 계산하고 오름차순으로 정렬하세요.
 
@@ -130,12 +135,20 @@ CTR 공식은 `(Clicks / Impressions) * 100`이며, 같은 연령대에 속하�
 
 결과 컬럼: `age`, `average_CTR`
 ```
-```
+
+```SQL
+SELECT
+  age,
+  AVG(Clicks * 100) AS average_CTR
+FROM `inflearn-bigquery-437314.facebook_ad_conversion_data.facebook_ad_conversion_data`
+GROUP BY age
+ORDER BY age;
 ```
 
 ![2번](../STUDY/image/2번.png)
 
 ## 익익 문제 3. 최소 10번 이상 Approved_Conversion을 기록한 광고 찾기
+
 ```MD
 **문제:** `Approved_Conversion` 수가 10번 이상인 광고의 정보를 조회하고 내림차순으로 정렬하세요.
 
@@ -143,11 +156,23 @@ CTR 공식은 `(Clicks / Impressions) * 100`이며, 같은 연령대에 속하�
 
 - `ad_id`, `age`, `gender`, `Approved_Conversion`
 ```
+
+```SQL
+SELECT
+  ad_id,
+  age,
+  gender,
+  Approved_Conversion
+FROM `inflearn-bigquery-437314.facebook_ad_conversion_data.facebook_ad_conversion_data`
+WHERE
+  Approved_Conversion >= 10
+ORDER BY Approved_Conversion DESC;
 ```
-```
+
 ![3번](../STUDY/image/3번.png)
 
 ## 익익 문제 4. 캠페인별 광고의 개수 찾기
+
 ```MD
 **문제:** 각 Facebook 캠페인(`fbcampaignid`)에서 사용된 광고(`ad_id`)의 개수를 계산하고 내림차순으로 정렬해주세요..
 
@@ -155,14 +180,37 @@ CTR 공식은 `(Clicks / Impressions) * 100`이며, 같은 연령대에 속하�
 
 - `fbcampaignid`, `Unique_Ads`
 ```
+
+```SQL
+SELECT
+  fb_campaign_id,
+  COUNT(DISTINCT ad_id) AS Unique_Ads
+FROM `inflearn-bigquery-437314.facebook_ad_conversion_data.facebook_ad_conversion_data`
+GROUP BY fb_campaign_id
+ORDER BY Unique_Ads DESC;
 ```
-```
+
 ![4번](../STUDY/image/4번.png)
 
 ## 익익 문제 4-1. 캠페인별 광고의 개수 찾기
+
 ```MD
 문제: 서브쿼리를 이용해서 각 ‘Unique_Ads’의 수를 세어주는 쿼리를 작성해봅시다~
 ```
+
+```SQL
+WITH campaign_ads AS(
+  SELECT
+    fb_campaign_id,
+  COUNT(DISTINCT ad_id) AS Unique_Ads
+  FROM `inflearn-bigquery-437314.facebook_ad_conversion_data.facebook_ad_conversion_data`
+  GROUP BY fb_campaign_id
+)
+
+SELECT
+  *
+FROM campaign_ads
+ORDER BY Unique_Ads DESC;
 ```
-```
+
 ![4-1번](../STUDY/image/4-1번.png)
