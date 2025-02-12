@@ -2,8 +2,7 @@
 
 
 
-![1](../STUDY/image/1.png)
-
+![1](../STUDY/image/3th/1.png)
 ## 2. 노선별 평균 역 사이 거리 조회하기[🔗](https://school.programmers.co.kr/learn/courses/30/lessons/284531)
 
 ```sql
@@ -16,7 +15,7 @@ GROUP BY ROUTE
 ORDER BY ROUND(SUM(D_BETWEEN_DIST),1) DESC
 ```
 
-![2-2](../STUDY/image/2-2.png)
+![2](../STUDY/image/3th/2.png)
 
 ## 3. 헤비 유저가 소유한 장소[🔗](https://school.programmers.co.kr/learn/courses/30/lessons/77487)
 
@@ -36,7 +35,7 @@ IN (
 ORDER BY ID
 ```
 
-![3-2](../STUDY/image/3-2.png)
+![3](../STUDY/image/3th/3.png)
 
 ## 4. 성분으로 구분한 아이스크림 총 주문량[🔗](https://school.programmers.co.kr/learn/courses/30/lessons/133026)
 
@@ -50,7 +49,7 @@ GROUP BY I.INGREDIENT_TYPE
 ORDER BY TOTAL_ORDER
 ```
 
-![4-2](../STUDY/image/4-2.png)
+![4](../STUDY/image/3th/4.png)
 
 ## 5. 즐겨찾기가 가장 많은 식당 정보 출력하기[🔗](https://school.programmers.co.kr/learn/courses/30/lessons/131123)
 
@@ -69,7 +68,7 @@ IN(
 ORDER BY FOOD_TYPE DESC;
 ```
 
-![5-2](../STUDY/image/5-2.png)
+![5](../STUDY/image/3th/5.png)
 
 ## 6. 조건에 맞는 사원 정보 조회하기[🔗](https://school.programmers.co.kr/learn/courses/30/lessons/284527)
 
@@ -88,7 +87,7 @@ ORDER BY SCORE DESC
 LIMIT 1;
 ```
 
-![6-2](../STUDY/image/6-2.png)
+![6](../STUDY/image/3th/6.png)
 
 ## 익익 문제
 ```
@@ -124,7 +123,7 @@ SELECT
 FROM `inflearn-bigquery-437314.facebook_ad_conversion_data.facebook_ad_conversion_data`
 ```
 
-![1번](../STUDY/image/1번.png)
+![익익1](../STUDY/image/3th/익익1.png)
 
 ## 익익 문제 2. 연령대별 평균 CTR 계산
 
@@ -145,7 +144,7 @@ GROUP BY age
 ORDER BY age;
 ```
 
-![2번](../STUDY/image/2번.png)
+![익익2](../STUDY/image/3th/익익2.png)
 
 ## 익익 문제 3. 최소 10번 이상 Approved_Conversion을 기록한 광고 찾기
 
@@ -169,7 +168,7 @@ WHERE
 ORDER BY Approved_Conversion DESC;
 ```
 
-![3번](../STUDY/image/3번.png)
+![익익3](../STUDY/image/3th/익익3.png)
 
 ## 익익 문제 4. 캠페인별 광고의 개수 찾기
 
@@ -190,7 +189,7 @@ GROUP BY fb_campaign_id
 ORDER BY Unique_Ads DESC;
 ```
 
-![4번](../STUDY/image/4번.png)
+![익익4](../STUDY/image/3th/익익4.png)
 
 ## 익익 문제 4-1. 캠페인별 광고의 개수 찾기
 
@@ -213,4 +212,4 @@ FROM campaign_ads
 ORDER BY Unique_Ads DESC;
 ```
 
-![4-1번](../STUDY/image/4-1번.png)
+![익익4-1](../STUDY/image/3th/익익4-1.png)
