@@ -89,6 +89,8 @@ LIMIT 1;
 
 ![6](../STUDY/image/3th/6.png)
 
+#
+
 ## 익익 문제
 ```
 Data: The data used in this project is from an anonymous organization’s social media ad
