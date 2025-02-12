@@ -90,7 +90,37 @@ LIMIT 1;
 
 ![6-2](../STUDY/image/6-2.png)
 
-## 익익 문제 1 
+## 익익 문제
+```
+Data: The data used in this project is from an anonymous organization’s social media ad
+campaign.
+1.) ad_id: an unique ID for each ad.
+2.) xyzcampaignid: an ID associated with each ad campaign of XYZ company.
+3.) fbcampaignid: an ID associated with how Facebook tracks each campaign.
+4.) age: age of the person to whom the ad is shown.
+5.) gender: gender of the person to whim the add is shown
+6.) interest: a code specifying the category to which the person’s interest belongs (interests are as mentioned in the person’s Facebook public profile).
+7.) Impressions: the number of times the ad was shown.
+8.) Clicks: number of clicks on for that ad.
+9.) Spent: Amount paid by company xyz to Facebook, to show that ad.
+10.) Total conversion: Total number of people who enquired about the product after seeing the ad.
+11.) Approved conversion: Total number of people who bought the product after seeing the ad.
+```
+
+## 익익 문제 1. CTR과 CPC 계산
+```MD
+CTR (Click Through Rate)와 CPC (Cost Per Click)를 계산하는 문제입니다.
+**문제:** 각 광고(`ad_id`)에 대해 다음 값을 계산한 뒤 기존 데이터에 추가해서 보여주세요. 계산값이 안 나오면 ‘NULL’로 처리해주세요.
+- **CTR**: `(Clicks / Impressions) * 100`
+- **CPC**: `Spent / Clicks`
+```
+
+```SQL
+SELECT
+
+```
+
+
 ![1번](../STUDY/image/1번.png)
 ## 익익 문제 2
 ![2번](../STUDY/image/2번.png)
