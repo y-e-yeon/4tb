@@ -123,7 +123,20 @@ FROM ANIMAL_INS;
 
 ### 문제 3. 문제를 풀어주세요 (힌트: IF, LIKE를 사용할 수 있습니다)
 
+```sql
+SELECT
+    ANIMAL_ID,
+    NAME,
+    IF(SEX_UPON_INTAKE LIKE 'Neutered%' or SEX_UPON_INTAKE LIKE 'Spayed%', 'O', 'X') AS '중성화'
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID;
+```
+
 ### 문제 4. 아래는 QnA에 올라온 질문입니다. 왜 풀이가 틀렸는지 답해주세요.[🔗](https://school.programmers.co.kr/questions/80270)
+
+```
+OR 조건을 사용할 때는 두 개의 조건을 모두 비교해야 하므로 'Neutered%'와 'Spayed%'가 각각 SEX_UPON_INTAKE와 비교되어야 한다.
+```
 
 # 린터 문제
 ## 1. [JOIN] 있었는데요 없었습니다[🔗](https://school.programmers.co.kr/learn/courses/30/lessons/59043)
