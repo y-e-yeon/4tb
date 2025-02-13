@@ -84,19 +84,10 @@ FROM
 ### 문제 4. 아래는 QnA에 올라온 질문입니다. 왜 풀이가 틀렸는지 답해주세요.[🔗](https://school.programmers.co.kr/questions/80270)
 
 # 린터 문제
-## 1. [JOIN] 있었는데요 없었습니다[🔗]
-1. [JOIN](https://school.programmers.co.kr/learn/courses/30/parts/17046)/ **있었는데요 없었습니다**
-    
-    https://school.programmers.co.kr/learn/courses/30/lessons/59043
-    
-2. [GROUP BY](https://school.programmers.co.kr/learn/courses/30/parts/17044)/**고양이와 개는 몇 마리 있을까**
+## 1. [JOIN] 있었는데요 없었습니다[🔗](https://school.programmers.co.kr/learn/courses/30/lessons/59043)
 
-http://school.programmers.co.kr/learn/courses/30/lessons/59040 
+## 2. [GROUP BY] 고양이와 개는 몇 마리 있을까[🔗](https://school.programmers.co.kr/learn/courses/30/lessons/59040)
 
-1. [SELECT](https://school.programmers.co.kr/learn/courses/30/parts/17042)/ **특정 세대의 대장균 찾기**
+## 3. [SELECT] 특성 세대의 대장균 찾기[🔗](https://school.programmers.co.kr/learn/courses/30/lessons/301650)
 
-https://school.programmers.co.kr/learn/courses/30/lessons/301650
-
-1. **SUBQUERY/폐쇄할 따릉이 정류소 찾기 2**
-
-https://solvesql.com/problems/find-unnecessary-station-2/
+## 4. [SUBQUERY] 폐쇄할 따릉이 정류소 찾기 2[🔗](https://solvesql.com/problems/find-unnecessary-station-2/)
