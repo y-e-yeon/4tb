@@ -89,13 +89,17 @@ FROM
 이때, RANK(), DENSE_RANK(), ROW_NUMBER() 함수를 사용하며 결과를 비교하고 해당 함수를 사용하는 경우를 서술해주세요. (함수 사용 예제는 직접 찾아보기)
 
 #### RANK()
-![3-rank](../STUDY/image/4th/3-rank.png)
+- 같은 값이면 같은 순위를 부여, 다음 순위는 건너뜀(ex. 1, 2, 2, 4...)
+- ![3-rank](../STUDY/image/4th/3-rank.png)
+
 
 #### DENSE_RANK()
-![3-dense_rank](../STUDY/image/4th/3-dense_rank.png)
+- 같은 값이면 같은 순위를 부여, 다음 순위는 연속됨(ex. 1, 2, 2, 3...)
+- ![3-dense_rank](../STUDY/image/4th/3-dense_rank.png)
 
 #### ROW_NUMBER()
-![3-row_number](../STUDY/image/4th/3-row_number.png)
+- 동일한 값이 있어도 무조건 1, 2, 3, 4 순서 부여
+- ![3-row_number](../STUDY/image/4th/3-row_number.png)
 
 # Advanced - 7주차
 ## [ISNULL] NULL처리하기 (SQL 고득점kit)[🔗](https://school.programmers.co.kr/learn/courses/30/lessons/59410)
