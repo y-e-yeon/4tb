@@ -24,6 +24,22 @@ WHERE (FOOD_TYPE, FAVORITES) IN (
 ) 
 ORDER BY FOOD_TYPE DESC;
 ```
+#### 해답
+```
+1. GROUP BY
+- 틀린 코드에선 FOOD_TYPE만 그룹화했지만 REST_ID와 REST_NAME도 조회 했기 때문에 오류가 발생할 수 있음
+- 정답 코드에선 MAX(FAVORITES)만 그룹화한 후에 다시 원본 테이블에서 필터링 했음!
+
+2. 서브쿼리
+- 틀린 코드에선 REST_ID, REST_NAME이 명확하지 않음
+- 정답 코드에선 FOOD_TYPE, FAVORITES 쌍으로 정확한 값을 필터링 했음!
+
+3. ORDER BY
+- 틀린 코드에선 서브쿼리 내부에 ORDER BY를 넣었으나, 서브쿼리 내부 ORDER BY는 의미가 없음
+- 정답 코드에선 최종 결과에서 ORDER BY를 실행했음!
+```
+
+
 
 또한, 이 문제에서는 아래 **개선된 쿼리**로도 조회될 수 있습니다. 
 
@@ -39,15 +55,22 @@ WITH RankedRest AS (
         FOOD_TYPE, REST_ID, REST_NAME, FAVORITES,
         ROW_NUMBER() OVER (PARTITION BY FOOD_TYPE ORDER BY FAVORITES DESC, REST_ID) AS rnk
     FROM REST_INFO
-)
+) -- ROW_NUMBER() 윈도우 함수를 사용해 순위 부여
 SELECT 
     FOOD_TYPE, REST_ID, REST_NAME, FAVORITES
 FROM RankedRest
-WHERE rnk = 1
-ORDER BY FOOD_TYPE DESC;
+WHERE rnk = 1 -- 각 FOOD_TYPE에서 FAVORITES가 가장 높은 레스토랑만 선택함
+ORDER BY FOOD_TYPE DESC; -- 음식 종류 내림차순 정렬
 ```
 
 이 코드를 단계별로 해석하고(주석 사용 등), 위 코드에 비해 갖는 이점을 설명하세요.
+```
+1. ROW_NUMBER()를 사용한 후 ORDER BY REST_ID를 추가하여 즐겨찾기 수가 같은 레스토랑이 중복되지 않도록 문제 해결 가능
+
+2. ROW_NUMBER()를 통해 데이터의 순위를 먼저 정리한 후에 원하는 데이터만 추출하므로, 직관성이 높아짐
+
+3. 대량 데이터 처리에서 윈도우 함수는 효율적이다!
+```
 
 ## 3. [SUBQUERY] 조건에 맞는 사원 정보 조회하기[🔗](https://school.programmers.co.kr/learn/courses/30/lessons/284527)
 
@@ -75,7 +98,8 @@ FROM
 ### 문제1. IFNULL()으로 해결
 
 같은 문제를, CASE WHEN 문법을 사용하여 해결해주세요
-문제2. CASE WHEN으로 해결
+
+### 문제2. CASE WHEN으로 해결
 
 ## 중성화 여부 파악하기[🔗](https://school.programmers.co.kr/learn/courses/30/lessons/59409#qna)
 
