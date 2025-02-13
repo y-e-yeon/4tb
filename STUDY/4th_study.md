@@ -143,6 +143,15 @@ OR 조건을 사용할 때는 두 개의 조건을 모두 비교해야 하므로
 
 ## 2. [GROUP BY] 고양이와 개는 몇 마리 있을까[🔗](https://school.programmers.co.kr/learn/courses/30/lessons/59040)
 
+```sql
+SELECT
+    ANIMAL_TYPE,
+    COUNT(ANIMAL_TYPE) AS 'count'
+FROM ANIMAL_INS
+GROUP BY ANIMAL_TYPE
+ORDER BY ANIMAL_TYPE;
+```
+
 ## 3. [SELECT] 특성 세대의 대장균 찾기[🔗](https://school.programmers.co.kr/learn/courses/30/lessons/301650)
 
 ## 4. [SUBQUERY] 폐쇄할 따릉이 정류소 찾기 2[🔗](https://solvesql.com/problems/find-unnecessary-station-2/)
