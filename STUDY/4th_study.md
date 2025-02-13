@@ -88,6 +88,15 @@ FROM
 
 이때, RANK(), DENSE_RANK(), ROW_NUMBER() 함수를 사용하며 결과를 비교하고 해당 함수를 사용하는 경우를 서술해주세요. (함수 사용 예제는 직접 찾아보기)
 
+#### RANK()
+![3-rank](../STUDY/image/4th/3-rank.png)
+
+#### DENSE_RANK()
+![3-dense_rank](../STUDY/image/4th/3-dense_rank.png)
+
+#### ROW_NUMBER()
+![3-row_number](../STUDY/image/4th/3-row_number.png)
+
 # Advanced - 7주차
 ## [ISNULL] NULL처리하기 (SQL 고득점kit)[🔗](https://school.programmers.co.kr/learn/courses/30/lessons/59410)
 
@@ -104,6 +113,7 @@ SELECT
     SEX_UPON_INTAKE
 FROM ANIMAL_INS;
 ```
+![문제1](../STUDY/image/4th/문제1.png)
 
 같은 문제를, CASE WHEN 문법을 사용하여 해결해주세요
 
@@ -131,6 +141,7 @@ SELECT
 FROM ANIMAL_INS
 ORDER BY ANIMAL_ID;
 ```
+![문제3](../STUDY/image/4th/문제3.png)
 
 ### 문제 4. 아래는 QnA에 올라온 질문입니다. 왜 풀이가 틀렸는지 답해주세요.[🔗](https://school.programmers.co.kr/questions/80270)
 
@@ -140,6 +151,17 @@ OR 조건을 사용할 때는 두 개의 조건을 모두 비교해야 하므로
 
 # 린터 문제
 ## 1. [JOIN] 있었는데요 없었습니다[🔗](https://school.programmers.co.kr/learn/courses/30/lessons/59043)
+
+```sql
+SELECT
+    I.ANIMAL_ID,
+    I.NAME
+FROM ANIMAL_INS I
+JOIN ANIMAL_OUTS O ON I.ANIMAL_ID = O.ANIMAL_ID
+WHERE I.DATETIME > O.DATETIME
+ORDER BY I.DATETIME
+```
+![린터1](../STUDY/image/4th/린터1.png)
 
 ## 2. [GROUP BY] 고양이와 개는 몇 마리 있을까[🔗](https://school.programmers.co.kr/learn/courses/30/lessons/59040)
 
@@ -151,7 +173,31 @@ FROM ANIMAL_INS
 GROUP BY ANIMAL_TYPE
 ORDER BY ANIMAL_TYPE;
 ```
+![린터2](../STUDY/image/4th/린터2.png)
 
 ## 3. [SELECT] 특성 세대의 대장균 찾기[🔗](https://school.programmers.co.kr/learn/courses/30/lessons/301650)
 
+```SQL
+WITH RECURSIVE GENERATION AS (
+    SELECT ID, PARENT_ID, 1 AS GENERATION
+    FROM ECOLI_DATA
+    WHERE PARENT_ID IS NULL
+    
+    UNION ALL
+    
+    SELECT E.ID, E.PARENT_ID, G.GENERATION + 1 AS GENERATION
+    FROM ECOLI_DATA E
+    JOIN GENERATION G ON E.PARENT_ID = G.ID
+)
+SELECT ID
+FROM GENERATION
+WHERE GENERATION = 3
+ORDER BY ID
+```
+![린터3](../STUDY/image/4th/린터3.png)
+
 ## 4. [SUBQUERY] 폐쇄할 따릉이 정류소 찾기 2[🔗](https://solvesql.com/problems/find-unnecessary-station-2/)
+
+```SQL
+너무 어려워서 못해요ㅠㅠ
+```
