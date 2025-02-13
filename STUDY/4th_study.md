@@ -97,9 +97,27 @@ FROM
 
 ### 문제1. IFNULL()으로 해결
 
+```sql
+SELECT
+    ANIMAL_TYPE,
+    IFNULL(NAME, 'No name') AS NAME,
+    SEX_UPON_INTAKE
+FROM ANIMAL_INS;
+```
+
 같은 문제를, CASE WHEN 문법을 사용하여 해결해주세요
 
 ### 문제2. CASE WHEN으로 해결
+```sql
+SELECT
+    ANIMAL_TYPE,
+    CASE
+        WHEN NAME IS NULL THEN 'No name'
+        ELSE NAME
+    END AS NAME,
+    SEX_UPON_INTAKE
+FROM ANIMAL_INS;
+```
 
 ## 중성화 여부 파악하기[🔗](https://school.programmers.co.kr/learn/courses/30/lessons/59409#qna)
 
