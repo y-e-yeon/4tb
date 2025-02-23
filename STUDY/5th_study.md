@@ -50,28 +50,28 @@
 2. 이 문제에서 사용될 수 있는 성능을 최적화하기 위한 방법은 무엇일까요?
 
 # 이젤 문제
-## 1. [] [🔗]()
+## 1. [SELECT] 강원도에 위치한 생산공장 목록 출력하기 [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/131112)
 
 ```sql
 
 ```
 ![이젤1](../STUDY/image/5th/이젤1.png)
 
-## 2. [] [🔗]()
+## 2. [GROUP BY] 특정 조건을 만족하는 물고기별 수와 최대 길이 구하기 [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/298519)
 
 ```sql
 
 ```
 ![이젤2](../STUDY/image/5th/이젤2.png)
 
-## 3. [] [🔗]()
+## 3. 제목이 모음으로 끝나지 않는 영화 [🔗](https://solvesql.com/problems/film-ending-with-consonant/)
 
 ```sql
 
 ```
 ![이젤3](../STUDY/image/5th/이젤3.png)
 
-## 4. [] [🔗]()
+## 4. 버뮤다 삼각지대에 들어가버린 택배 [🔗](https://solvesql.com/problems/shipment-in-bermuda/)
 
 ```sql
 
