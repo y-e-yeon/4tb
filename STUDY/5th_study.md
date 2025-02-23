@@ -53,27 +53,59 @@
 ## 1. [SELECT] 강원도에 위치한 생산공장 목록 출력하기 [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/131112)
 
 ```sql
-
+SELECT
+    FACTORY_ID,
+    FACTORY_NAME,
+    ADDRESS
+FROM FOOD_FACTORY
+WHERE
+    ADDRESS LIKE '강원도%'
+ORDER BY FACTORY_ID
 ```
 ![이젤1](../STUDY/image/5th/이젤1.png)
 
 ## 2. [GROUP BY] 특정 조건을 만족하는 물고기별 수와 최대 길이 구하기 [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/298519)
 
 ```sql
-
+SELECT
+    COUNT(FISH_TYPE) AS FISH_COUNT,
+    MAX(LENGTH) AS MAX_LENGTH,
+    FISH_TYPE
+FROM FISH_INFO
+GROUP BY FISH_TYPE
+HAVING
+    IF(AVG(LENGTH) <= 10, 10, AVG(LENGTH)) >= 33
+ORDER BY FISH_TYPE ASC;
 ```
 ![이젤2](../STUDY/image/5th/이젤2.png)
 
 ## 3. 제목이 모음으로 끝나지 않는 영화 [🔗](https://solvesql.com/problems/film-ending-with-consonant/)
 
 ```sql
-
+SELECT
+  title
+FROM film
+WHERE (rating = 'NC-17' OR rating = 'R')
+AND title NOT LIKE '%A'
+AND title NOT LIKE '%E'
+AND title NOT LIKE '%I'
+AND title NOT LIKE '%O'
+AND title NOT LIKE '%U'
 ```
 ![이젤3](../STUDY/image/5th/이젤3.png)
 
 ## 4. 버뮤다 삼각지대에 들어가버린 택배 [🔗](https://solvesql.com/problems/shipment-in-bermuda/)
 
 ```sql
+SELECT
+  DATE(order_delivered_carrier_date) AS delivered_carrier_date,
+  SUM(CASE WHEN order_delivered_customer_date IS NULL THEN 1 ELSE 0 END) AS orders
+FROM olist_orders_dataset
 
+WHERE order_delivered_carrier_date LIKE '2017-01-%'
+AND order_delivered_customer_date IS NULL
+
+GROUP BY DATE(order_delivered_carrier_date)
+ORDER BY DATE(order_delivered_carrier_date);
 ```
 ![이젤4](../STUDY/image/5th/이젤4.png)
