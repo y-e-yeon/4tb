@@ -1,9 +1,35 @@
 # Advanced - 8주차
 ## 1. PIVOT과  UNPIVOT
-### 1) pivot과 unpivot에 관해 자유로운 리소스를 이용해 학습하고 요약해주세요.
+### 1) pivot과 unpivot에 관해 자유로운 리소스를 이용해 학습하고 요약해주세요.[🔗](https://www.youtube.com/watch?v=FINRIH6Bmq0)
 
-### 2) 다음 문제를 풀어주세요
+칼럼을 기준으로 여러 개의 행으로 나뉜 데이터를 행과 열을 전환해 테이블을 재구성하여 보기 편하도록 만드는 것
 
+**PIVOT**
+- 행을 열로 바꾼다. 지정된 칼럼의 각 행 속성값들이 새로운 칼럼 헤더가 되고 이에 맞게 전체 속성값들이 재배치된다.
+
+**UNPIVOT**
+- PIVOT과 반대로 열을 행으로 바꾼다. 칼럼 헤더들이 한 칼럼의 각 행 속성값이 되고 이에 맞게 전체 속성값들이 재배치된다.
+
+### 2) 다음 문제를 풀어주세요[🔗](https://www.hackerrank.com/challenges/occupations/problem)
+```sql
+SET @D=0, @P=0, @S=0, @A=0;
+SELECT MIN(Doctor), MIN(Professor), MIN(Singer), MIN(Actor)
+FROM (SELECT CASE WHEN Occupation = "Doctor" THEN Name END AS Doctor,
+CASE WHEN Occupation = 'Professor' THEN Name END AS Professor,
+CASE WHEN Occupation =
+'Singer' THEN Name END AS Singer,
+CASE WHEN Occupation = 'Actor' THEN Name END AS Actor,
+CASE
+WHEN Occupation = 'Doctor' THEN (QD: =@D+1)
+WHEN Occupation = 'Professor' THEN (@P:=@p+1)
+WHEN Occupation =
+'Singer' THEN (@S:=@S+1)
+WHEN Occupation = 'Actor' THEN (@A:=@A+1)
+END AS RowNumber
+FROM Occupations
+ORDER BY Name) sub
+GROUP BY RowNumber
+```
 ## 2. 성능 최적화 기법
 ### 1) 아래 칼럼을 읽고 요약해주세요.
 
@@ -47,7 +73,9 @@
 ### 추가 질문:
 
 1. 정답 쿼리에서 `repurchase_rate`를 구할 때 사용한 `HAVING COUNT(order_details.product_id) > 1`의 의미는 무엇인가요?
+: 특정 고객이 동일한 제품을 두 번 이상 구매한 경우
 2. 이 문제에서 사용될 수 있는 성능을 최적화하기 위한 방법은 무엇일까요?
+: 인덱스를 추가하거나 서브 쿼리를 한 번만 실행하기기
 
 # 이젤 문제
 ## 1. [SELECT] 강원도에 위치한 생산공장 목록 출력하기 [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/131112)
