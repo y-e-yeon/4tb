@@ -12,7 +12,7 @@ SELECT
 FROM ECOLI_DATA
 ORDER BY ID;
 ```
-![예리나1](../4TB_winter_study/image/6th/예리나1.png)
+![예리나1](../Winter_study/image/6th/예리나1.png)
 
 ## 2. [SELECT] 대장균의 크기에 따라 분류하기 2[🔗](https://school.programmers.co.kr/learn/courses/30/lessons/301649)
 
@@ -28,7 +28,7 @@ SELECT
 FROM ECOLI_DATA
 ORDER BY ID;
 ```
-![예리나2](../4TB_winter_study/image/6th/예리나2.png)
+![예리나2](../Winter_study/image/6th/예리나2.png)
 
 ## 3. 우유와 요거트가 담긴 장바구니 [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/62284)
 
@@ -42,7 +42,7 @@ GROUP BY CART_ID
 HAVING COUNT(DISTINCT NAME) = 2
 ORDER BY CART_ID;
 ```
-![예리나3](../4TB_winter_study/image/6th/예리나3.png)
+![예리나3](../Winter_study/image/6th/예리나3.png)
 
 ## 4. [JOIN] 없어진 기록 찾기 [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/59042)
 
@@ -53,7 +53,7 @@ SELECT
 FROM ANIMAL_OUTS
 WHERE ANIMAL_ID NOT IN (SELECT ANIMAL_ID FROM ANIMAL_INS)
 ```
-![예리나4](../4TB_winter_study/image/6th/예리나4.png)
+![예리나4](../Winter_study/image/6th/예리나4.png)
 
 ## 5. [JOIN] 상품을 구매한 회원 비율 구하기 [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/131534)
 
@@ -69,4 +69,4 @@ WHERE U.JOINED LIKE '2021%'
 GROUP BY MONTH(O.SALES_DATE)
 ORDER BY YEAR(O.SALES_DATE), MONTH(O.SALES_DATE)
 ```
-![예리나5](../4TB_winter_study/image/6th/예리나5.png)
+![예리나5](../Winter_study/image/6th/예리나5.png)

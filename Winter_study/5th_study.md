@@ -90,7 +90,7 @@ WHERE
     ADDRESS LIKE '강원도%'
 ORDER BY FACTORY_ID
 ```
-![이젤1](../4TB_winter_study/image/5th/이젤1.png)
+![이젤1](../Winter_study/image/5th/이젤1.png)
 
 ## 2. [GROUP BY] 특정 조건을 만족하는 물고기별 수와 최대 길이 구하기 [🔗](https://school.programmers.co.kr/learn/courses/30/lessons/298519)
 
@@ -105,7 +105,7 @@ HAVING
     IF(AVG(LENGTH) <= 10, 10, AVG(LENGTH)) >= 33
 ORDER BY FISH_TYPE ASC;
 ```
-![이젤2](../4TB_winter_study/image/5th/이젤2.png)
+![이젤2](../Winter_study/image/5th/이젤2.png)
 
 ## 3. 제목이 모음으로 끝나지 않는 영화 [🔗](https://solvesql.com/problems/film-ending-with-consonant/)
 
@@ -120,7 +120,7 @@ AND title NOT LIKE '%I'
 AND title NOT LIKE '%O'
 AND title NOT LIKE '%U'
 ```
-![이젤3](../4TB_winter_study/image/5th/이젤3.png)
+![이젤3](../Winter_study/image/5th/이젤3.png)
 
 ## 4. 버뮤다 삼각지대에 들어가버린 택배 [🔗](https://solvesql.com/problems/shipment-in-bermuda/)
 
@@ -136,4 +136,4 @@ AND order_delivered_customer_date IS NULL
 GROUP BY DATE(order_delivered_carrier_date)
 ORDER BY DATE(order_delivered_carrier_date);
 ```
-![이젤4](../4TB_winter_study/image/5th/이젤4.png)
+![이젤4](../Winter_study/image/5th/이젤4.png)
