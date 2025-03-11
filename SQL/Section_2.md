@@ -52,4 +52,4 @@
 
 **쿼리 실행해보기**
 
-![2-1](../SQL/image/Section_2/2-1.png)
+![1-2](../SQL/image/Section_2/1-2.png)
