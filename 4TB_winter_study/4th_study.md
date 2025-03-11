@@ -90,16 +90,16 @@ FROM
 
 #### RANK()
 - 같은 값이면 같은 순위를 부여, 다음 순위는 건너뜀(ex. 1, 2, 2, 4...)
-- ![3-rank](../STUDY/image/4th/3-rank.png)
+- ![3-rank](../4TB_winter_study/image/4th/3-rank.png)
 
 
 #### DENSE_RANK()
 - 같은 값이면 같은 순위를 부여, 다음 순위는 연속됨(ex. 1, 2, 2, 3...)
-- ![3-dense_rank](../STUDY/image/4th/3-dense_rank.png)
+- ![3-dense_rank](../4TB_winter_study/image/4th/3-dense_rank.png)
 
 #### ROW_NUMBER()
 - 동일한 값이 있어도 무조건 1, 2, 3, 4 순서 부여
-- ![3-row_number](../STUDY/image/4th/3-row_number.png)
+- ![3-row_number](../4TB_winter_study/image/4th/3-row_number.png)
 
 # Advanced - 7주차
 ## [ISNULL] NULL처리하기 (SQL 고득점kit)[🔗](https://school.programmers.co.kr/learn/courses/30/lessons/59410)
@@ -117,7 +117,7 @@ SELECT
     SEX_UPON_INTAKE
 FROM ANIMAL_INS;
 ```
-![문제1](../STUDY/image/4th/문제1.png)
+![문제1](../4TB_winter_study/image/4th/문제1.png)
 
 같은 문제를, CASE WHEN 문법을 사용하여 해결해주세요
 
@@ -145,7 +145,7 @@ SELECT
 FROM ANIMAL_INS
 ORDER BY ANIMAL_ID;
 ```
-![문제3](../STUDY/image/4th/문제3.png)
+![문제3](../4TB_winter_study/image/4th/문제3.png)
 
 ### 문제 4. 아래는 QnA에 올라온 질문입니다. 왜 풀이가 틀렸는지 답해주세요.[🔗](https://school.programmers.co.kr/questions/80270)
 
@@ -165,7 +165,7 @@ JOIN ANIMAL_OUTS O ON I.ANIMAL_ID = O.ANIMAL_ID
 WHERE I.DATETIME > O.DATETIME
 ORDER BY I.DATETIME
 ```
-![린터1](../STUDY/image/4th/린터1.png)
+![린터1](../4TB_winter_study/image/4th/린터1.png)
 
 ## 2. [GROUP BY] 고양이와 개는 몇 마리 있을까[🔗](https://school.programmers.co.kr/learn/courses/30/lessons/59040)
 
@@ -177,7 +177,7 @@ FROM ANIMAL_INS
 GROUP BY ANIMAL_TYPE
 ORDER BY ANIMAL_TYPE;
 ```
-![린터2](../STUDY/image/4th/린터2.png)
+![린터2](../4TB_winter_study/image/4th/린터2.png)
 
 ## 3. [SELECT] 특성 세대의 대장균 찾기[🔗](https://school.programmers.co.kr/learn/courses/30/lessons/301650)
 
@@ -198,7 +198,7 @@ FROM GENERATION
 WHERE GENERATION = 3
 ORDER BY ID
 ```
-![린터3](../STUDY/image/4th/린터3.png)
+![린터3](../4TB_winter_study/image/4th/린터3.png)
 
 ## 4. [SUBQUERY] 폐쇄할 따릉이 정류소 찾기 2[🔗](https://solvesql.com/problems/find-unnecessary-station-2/)
 
